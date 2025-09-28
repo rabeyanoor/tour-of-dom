@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tour of DOM</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <style>
+      li {
+        color: blue;
+      }
+      #my-list li {
+        color: green;
+      }
+      .important-places {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Welcom to my DOM</h1>
+    </header>
+    <main>
+      <h1>My Awesom DOM de baba</h1>
+      <ul class="fruits-container">
+        <li class="important-places">jalali Set</li>
+        <li class="important-places">Shafayat</li>
+        <li class="important-places">bonobashi</li>
+      </ul>
+      <h2 id="fruits-title">Fruits I like.</h2>
+      <ul id="my-list">
+        <li>jalali Set</li>
+        <li>Shafayat</li>
+        <li>bonobashi</li>
+      </ul>
+    </main>
+    <footer></footer>
+    <script src="js/dom.js"></script>
+    <script>
+      console.log("adding JS insite the HTML file");
+    </script>
+    <script>
+      const students = {
+        name: "jalali",
+        id: 11,
+        age: 24,
+        study: function (time) {
+          console.log(time, "study kortese");
+        },
+      };
+    </script>
+    <script>
+      const liCollection = document.getElementsByTagName("li");
+      for (const li of liCollection) {
+        console.log(li.innerText);
+      }
+
+      const alHeadings = document.getElementsByTagName("h1");
+      for (const h1 of alHeadings) {
+        console.log(h1);
+      }
+
+      const myList = document.getElementById("my-list");
+      console.log(myList.innerText);
+
+      const places = document.getElementsByClassName("important-places");
+      console.log(places);
+      for (const place of places) {
+        console.log(place);
+        console.log(place.innerText);
+      }
+
+      const fruitsTitle = document.getElementById("fruits-title");
+      fruitsTitle.innerText = "Fruits are good for health";
+
+      const someLi = document.querySelectorAll(".fruits-container li");
+      for (const li of someLi) {
+        console.log(li.innerText);
+      }
+    </script>
+  </body>
+</html>
